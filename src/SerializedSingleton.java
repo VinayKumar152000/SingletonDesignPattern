@@ -18,7 +18,8 @@ public class SerializedSingleton implements Serializable {
 		return SingletonHelper.instance;
 	}
 
-	// readResolve -> so that singleton pattern don't get destoryed
+	// readResolve -> so that singleton pattern don't get destoryed , this is becuase when we desearialize our object a new instance is created to avoid it we use
+	//readResolve
 	protected Object readResolve() {
 		return getInstance();
 	}
